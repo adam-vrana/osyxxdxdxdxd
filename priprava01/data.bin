@@ -1,0 +1,16 @@
+Meta tagy
+Open Graph a Twitter Cards (lepší sdílení na sociálních sítích)
+Google Analytics nebo jiný měřící nástroj
+https://www.instagram.com/adventure_design_cz/
+	https://www.facebook.com/profile.php?id=100083982791008
+
+<li><a href="sluzby/index.html#prodej-expedicnich-doplnku">Prodej expedičních doplňků</a></li>
+<li><a href="sluzby/index.html#upravy-prestavby">Úpravy vozidel</a></li>
+<li><a href="sluzby/index.html#vyroba-prislusenstvi">Výroba příslušenství</a></li>
+<li><a href="sluzby/index.html#montaz-sluzby">Montáž vybavení</a></li>
+<li><a href="sluzby/index.html#prodej-autostanu">Prodej autostanů</a></li>
+
+733741336
+
+cd "/home/thecrow/Desktop/PROJEKTY/web adventure desiiign/WEB/www"
+php -S localhost:8000
