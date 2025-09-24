@@ -18,61 +18,58 @@ echo
 echo "=== STARTING TESTS ==="
 echo
 
-# Změň do adresáře vernum
-cd vernum
-
 export LD_LIBRARY_PATH=dir1
 echo "Changing export path to dir1"
-echo "Test inty.txt"
-./vernum < ../inty.txt
+echo "Test inty.txt with -d flag"
+./vernum/vernum -d < inty.txt
 echo
-echo "Test float.txt"
-./vernum < ../float.txt
+echo "Test float.txt with -d flag"
+./vernum/vernum -d < float.txt
 echo
-echo "Test hexa.txt"
-./vernum < ../hexa.txt
+echo "Test hexa.txt with -d flag"
+./vernum/vernum -d < hexa.txt
 echo
-echo "Test bin.txt"
-./vernum < ../bin.txt
+echo "Test bin.txt with -d flag"
+./vernum/vernum -d < bin.txt
 echo "--------------------------------"
 export LD_LIBRARY_PATH=dir2
 echo "Changing export path to dir2"
-echo "Test inty.txt"
-./vernum < ../inty.txt
-echo 
-echo "Test float.txt"
-./vernum < ../float.txt
+echo "Test inty.txt with -d flag"
+./vernum/vernum -d < inty.txt
 echo
-echo "Test hexa.txt"
-./vernum < ../hexa.txt
+echo "Test float.txt with -d flag"
+./vernum/vernum -d < float.txt
 echo
-echo "Test bin.txt"
-./vernum < ../bin.txt
+echo "Test hexa.txt with -d flag"
+./vernum/vernum -d < hexa.txt
+echo
+echo "Test bin.txt with -d flag"
+./vernum/vernum -d < bin.txt
 echo "--------------------------------"
 export LD_LIBRARY_PATH=dir3
 echo "Changing export path to dir3"
-echo "Test inty.txt"
-./vernum < ../inty.txt
+echo "Test inty.txt with -d flag"
+./vernum/vernum -d < inty.txt
 echo
-echo "Test float.txt"
-./vernum < ../float.txt
+echo "Test float.txt with -d flag"
+./vernum/vernum -d < float.txt
 echo
-echo "Test hexa.txt"
-./vernum < ../hexa.txt
+echo "Test hexa.txt with -d flag"
+./vernum/vernum -d < hexa.txt
 echo
-echo "Test bin.txt"
-./vernum < ../bin.txt
+echo "Test bin.txt with -d flag"
+./vernum/vernum -d < bin.txt
 echo "--------------------------------"
 export LD_LIBRARY_PATH=dir4
 echo "Changing export path to dir4"
-echo "Test inty.txt"
-./vernum < ../inty.txt
+echo "Test inty.txt with -d flag"
+./vernum/vernum -d < inty.txt
 echo
-echo "Test float.txt"
-./vernum < ../float.txt
+echo "Test float.txt with -d flag"
+./vernum/vernum -d < float.txt
 echo
-echo "Test hexa.txt"
-./vernum < ../hexa.txt
+echo "Test hexa.txt with -d flag"
+./vernum/vernum -d < hexa.txt
 echo
-echo "Test bin.txt"
-./vernum < ../bin.txt
+echo "Test bin.txt with -d flag"
+./vernum/vernum -d < bin.txt

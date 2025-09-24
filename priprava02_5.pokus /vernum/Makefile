@@ -6,7 +6,7 @@ TARGET = vernum
 
 # knihovna checker
 LIBNAME = checker
-LDFLAGS ?= -Ldir1
+LDFLAGS ?= -L../dir1
 LDLIBS = -l$(LIBNAME)
 
 all: $(TARGET)

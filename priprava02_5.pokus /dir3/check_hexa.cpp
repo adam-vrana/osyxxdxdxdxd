@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
-#include "checker.h"
+#include "../include/checker.h"
 
 int hex_to_int(const char *hex_str) {
     int result = 0;
@@ -11,7 +11,7 @@ int hex_to_int(const char *hex_str) {
     return result;
 }
 
-int check_numbers(const char* line, int line_number) {
+int check_numbers(const char* line, int line_number, int flag_debug) {
     char line_copy[10000];
     strcpy(line_copy, line);
     
@@ -30,7 +30,9 @@ int check_numbers(const char* line, int line_number) {
         int num = hex_to_int(token);
         
         if (next_token == NULL) {
-            printf("Line %d: Calculated sum = 0x%x, Expected sum = 0x%x\n", line_number, sum, num);
+            if (flag_debug) {
+                printf("Line %d: Calculated sum = 0x%x, Expected sum = 0x%x\n", line_number, sum, num);
+            }
             if (sum != num) {
                 fprintf(stderr, "Error on line %d: Sum mismatch. Expected: 0x%x, Got: 0x%x\n", line_number, sum, num);
                 return 0;

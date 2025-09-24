@@ -3,19 +3,20 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
-#include "checker.h"
+#include "../include/checker.h"
 
 int bin_to_int(const char *bin_str) {
     int result = 0;
-    bin_str += 2;
-    while (*bin_str) {
-        result = result * 2 + (*bin_str - '0');
-        bin_str++;
-    }
+    // bin_str += 2;
+    // while (*bin_str) {
+    //     result = result * 2 + (*bin_str - '0');
+    //     bin_str++;
+    // }
+    sscanf(bin_str, "0b%b", &result);
     return result;
 }
 
-int check_numbers(const char* line, int line_number) {
+int check_numbers(const char* line, int line_number, int flag_debug) {
     char line_copy[10000];
     strcpy(line_copy, line);
     
@@ -44,7 +45,9 @@ int check_numbers(const char* line, int line_number) {
         token = next_token;
     }
     
-    printf("Line %d: Calculated sum = %d, Expected sum = %d\n", line_number, sum, expected_sum);
+    if (flag_debug) {
+        printf("Line %d: Calculated sum = %d, Expected sum = %d\n", line_number, sum, expected_sum);
+    }
     
     if (sum != expected_sum) {
         fprintf(stderr, "Error on line %d: Sum mismatch. Expected: %d, Got: %d\n", line_number, expected_sum, sum);

@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "checker.h"
+#include "../include/checker.h"
 
-int check_numbers(const char* line, int line_number) {
+int check_numbers(const char* line, int line_number, int flag_debug) {
     char line_copy[10000];
     strcpy(line_copy, line);
     
@@ -22,7 +22,9 @@ int check_numbers(const char* line, int line_number) {
         int num = atoi(token);
         
         if (next_token == NULL) {
-            printf("Line %d: Calculated sum = %d, Expected sum = %d\n", line_number, sum, num);
+            if (flag_debug) {
+                printf("Line %d: Calculated sum = %d, Expected sum = %d\n", line_number, sum, num);
+            }
             if (sum != num) {
                 fprintf(stderr, "Error on line %d: Sum mismatch. Expected: %d, Got: %d\n", line_number, sum, num);
                 return 0;
