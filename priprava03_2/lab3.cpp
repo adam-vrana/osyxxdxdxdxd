@@ -101,7 +101,7 @@ void last_lines(const char *filename, int n){
     fseek(file, start_pos, SEEK_SET);
 
     char line[1024];
-    while(fgets(line, sizeof(line), file) != NULL){
+    while(fgets(line, sizeof(line), file) != NULL){;
         printf("%s", line);
     }
 
@@ -125,8 +125,15 @@ void print_new_lines(const char *filename, long start_pos){
 int main(int argc, char *argv[]){
     vector<string> files;
     vector<string> notFoundFiles;
+    int n = 0;
 
     for(int i = 1; i < argc; i++){
+        if(strcmp(argv[i], "-n") == 0 && i + 1 < argc){
+            n = atoi(argv[i + 1]);
+            i++;
+            continue;
+        }
+
         struct stat fileStat;
         if(stat(argv[i], &fileStat) < 0){
             notFoundFiles.push_back(argv[i]);
@@ -154,13 +161,13 @@ int main(int argc, char *argv[]){
 
     qsort(fileInfos, files.size(), sizeof(FileInfo), compare_size);
 
-    printf("Not found:\n");
+    printf("Not found files:\n");
     for(int i = 0; i < notFoundFiles.size(); i++){
-        printf("%s ", notFoundFiles[i].c_str());
+        printf("%s\n", notFoundFiles[i].c_str());
     }
 
     printf("\n");
-    printf("Found:\n");
+    printf("Found files:\n");
     for(int i = 0; i < files.size(); i++){
         //modes
         print_mode(fileInfos[i]);
@@ -184,9 +191,9 @@ int main(int argc, char *argv[]){
         printf("\n");
 
         printf("-----------------\n");
-        first_lines(fileInfos[i].name, 5);  
+        first_lines(fileInfos[i].name, n);  
         printf("-----------------\n");
-        last_lines(fileInfos[i].name, 5);
+        last_lines(fileInfos[i].name, n);
         printf("\n-----------------\n");
 
         
